@@ -1,0 +1,32 @@
+{
+  "name": "rong-generator",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint . --fix",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsnode": "node --experimental-specifier-resolution=node --loader ts-node/esm --no-warnings"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/bezier-js": "^4.1.0",
+    "@types/node": "^17.0.23",
+    "@typescript-eslint/eslint-plugin": "^5.19.0",
+    "@typescript-eslint/parser": "^5.19.0",
+    "eslint": "^8.13.0",
+    "install": "^0.13.0",
+    "parcel-bundler": "^1.12.5",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "@material/material-color-utilities": "^0.1.1",
+    "bezier-js": "^6.1.0"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "ts-node": {
+    "compilerOptions": {
+      // "target": "esnext",
+      // "module": "commonjs",
+      "esModuleInterop": true,
+    }
+  },
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "es2015",
+    "outDir": "./dist",
+    "declaration": true,
+    "strict": true,
+    "moduleResolution": "node"
+  },
+  "include": ["lib/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
