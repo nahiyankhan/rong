@@ -32,6 +32,7 @@ jspm_packages/
 
 # build folders
 dist
+palette
 
 # Next.js build output
 .next
