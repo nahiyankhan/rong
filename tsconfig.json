@@ -16,7 +16,7 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
   },
-  "include": ["lib/**/*.ts"],
+  "include": ["generator/scripts/**/*.ts"],
   "exclude": ["node_modules"],
 
   "watchOptions": {

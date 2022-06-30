@@ -1,4 +1,4 @@
-import { HCT, hexFromArgb } from "@material/material-color-utilities";
+import { Hct, hexFromArgb } from "@material/material-color-utilities";
 import BezierEasing from 'bezier-easing'
 import { curves } from "./curves";
 import { Props, Color, Swatch } from "./type";
@@ -24,7 +24,7 @@ export function generate(
 
   for (const index in steps) {
     const step = steps[index]
-    const hct = HCT.from(hueCoords[index], chromaCoords[index], toneCoords[index])
+    const hct = Hct.from(hueCoords[index], chromaCoords[index], toneCoords[index])
     const hex = hexFromArgb(hct.toInt())
     const contrastBlack = chromajs.contrast(hex, 'black').toFixed(2)
     const contrastWhite = chromajs.contrast(hex, 'white').toFixed(2)
