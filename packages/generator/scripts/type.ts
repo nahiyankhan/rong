@@ -24,6 +24,7 @@ export interface Props {
 
 export type Color = {
   name: string,
+  averageColor: string,
   swatch: Swatch[]
 }
 

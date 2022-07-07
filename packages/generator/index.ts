@@ -1,20 +1,17 @@
 import { Hct, hexFromArgb } from "@material/material-color-utilities";
 import BezierEasing from 'bezier-easing'
-import { curves } from "./curves";
-import { Props, Color, Swatch } from "./type";
+import { curves } from "./scripts/curves";
+import { Props, Color, Swatch } from "./scripts/type";
 import { default as chromajs } from 'chroma-js'
 
-// Shortcut 
-const log = console.log
-
 export function generate(
-  props: Props
+  props: Props,
+  steps: number[],
+  tone: { start: number, end: number}
 ) {
   const name = props.name
   const hue = props.specs.hue
   const chroma = props.specs.chroma
-  const tone = props.specs.tone
-  const steps = props.specs.steps
   
   const hueCoords: number[] = getCoords(hue.start, hue.end, hue.curve, steps)
   const chromaCoords: number[] = getCoords(chroma.start, chroma.end, chroma.curve, steps)
@@ -42,13 +39,16 @@ export function generate(
     )
   }
 
-  const color = {
+  const averageColor: string = chromajs.average(swatch.map(color => color.hex)).hex()
+
+  const color: Color = {
     name: name,
+    averageColor: averageColor,
     swatch: swatch
   }
 
   return {
-    color
+    ...color
   }
 }
 

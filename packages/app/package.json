@@ -1,0 +1,34 @@
+{
+  "name": "@rong/app",
+  "version": "0.1.0",
+  "author": "",
+  "description": "",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.10",
+    "@types/node": "^18.0.3",
+    "@types/react": "18.0.14",
+    "@types/react-dom": "18.0.5",
+    "chroma-js": "^2.4.2",
+    "eslint": "8.18.0",
+    "eslint-config-next": "12.2.0",
+    "framer-motion": "^6.5.0",
+    "next": "12.1.6",
+    "next-compose-plugins": "^2.2.0",
+    "next-transpile-modules": "^9.0.0",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
+    "sass": "^1.53.0",
+    "typescript": "4.7.4"
+  },
+  "dependencies": {
+    "@rong/generator": "workspace:^"
+  }
+}
