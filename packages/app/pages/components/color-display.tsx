@@ -12,7 +12,7 @@ const ColorDisplay = () => {
     start: 30,
     end: 90
   })
-  const [bg, setBg] = useState('white')
+  const [bg, setBg] = useState('')
 
   const randomColorProp = () => {
     const hue = randomHue();
@@ -66,11 +66,11 @@ const ColorDisplay = () => {
   // update bg whenever palette chagnes
   useEffect(() => {
     if (palettes.length > 1) {
-      const gradient = `linear-gradient(-45deg, ${palettes.map(color => color.averageColor).join(',')})`
+      const gradient = `linear-gradient(-45deg, ${palettes.map(color => color.averageColor + 'bf').join(',')})`
       console.log(gradient)
       setBg(gradient)
     } else if (palettes.length === 1) {
-      setBg(`linear-gradient(-45deg, ${palettes[0].averageColor}, ${palettes[0].averageColor})`)
+      setBg(`linear-gradient(-45deg, ${palettes[0].averageColor}bf, ${palettes[0].averageColor}bf)`)
     }
   }, [palettes])
    
@@ -115,12 +115,19 @@ const ColorDisplay = () => {
       style={{
         backgroundImage: bg
       }}>
-      {palettes.map((palette, i) => (
-        <Palette 
-          index={i}
-          palette={palette}
-          length={palettes.length} />
-      ))}
+      <motion.div 
+        className={styles['palette-container']}
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        transition={{duration: 1}}
+      >
+        {palettes.map((palette, i) => (
+          <Palette 
+            index={i}
+            palette={palette}
+            length={palettes.length} />
+        ))}
+      </motion.div>
 
       {/* <div className={styles['toolbar']}>
 
