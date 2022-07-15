@@ -1,23 +1,17 @@
 {
-  "name": "rong",
-  "type": "module",
   "version": "0.1",
-  "description": "",
-  "scripts": {
-    "build": "tsc",
-    "watch": "tsc --watch",
-    "lint": "eslint . --fix",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "tsnode": "node --experimental-specifier-resolution=node --loader ts-node/esm --no-warnings",
-    "dev:app": "npm run -w app dev"
-  },
-  "keywords": [],
   "author": "",
-  "license": "ISC",
-  "workspaces": {
-    "packages": [
-      "app",
-      "generator"
-    ]
+  "description": "",
+  "private": true,
+  "scripts": {
+    "build:generator": "yarn workspace @rong/generator build",
+    "dev:app": "yarn workspace @rong/app dev"
+  },
+  "workspaces": [
+    "./packages/*"
+  ],
+  "packageManager": "yarn@3.2.1",
+  "devDependencies": {
+    "typescript": "^4.7.4"
   }
 }
