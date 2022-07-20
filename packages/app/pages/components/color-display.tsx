@@ -3,6 +3,8 @@ import styles from '../../styles/colordisplay.module.scss'
 import Palette from './palette'
 import { generate } from '@rong/generator'
 import { motion } from 'framer-motion'
+import AddPalette from './ui/add-palette'
+import AddStep from "./ui/add-step";
 
 const ColorDisplay = () => {
   const [colorProps, setColorProps] = useState([]);
@@ -40,6 +42,7 @@ const ColorDisplay = () => {
   const randomHue = () => {
     const curve = [0.5, 0.5, 0.5, 0.5];
     const start = randomInt(15, 345);
+    // const start = randomInt(135, 145); // cash equivalent
     const rotation = randomInt(0, 1) ? 'cw' : 'ccw';
     const end = 'cw' ? start+10 : start-10;
 
@@ -129,15 +132,8 @@ const ColorDisplay = () => {
         ))}
       </motion.div>
 
-      {/* <div className={styles['toolbar']}>
-
-      </div> */}
-
-      <div className={`${styles['ui-button']} ${styles['add-palette']}`} onClick={addPalette}>
-      </div>
-
-      <div className={`${styles['ui-button']} ${styles['add-step']}`} onClick={addStep}>
-      </div>
+      <AddPalette clickHandler={addPalette}/>
+      <AddStep clickHandler={addStep}/>
 
       <div
         style={{

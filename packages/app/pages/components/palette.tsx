@@ -1,21 +1,7 @@
-import {useEffect, useRef} from 'react'
 import styles from '../../styles/palette.module.scss'
 import { motion } from 'framer-motion'
 
 const Palette = (props) => {
-  // const firstRender = useRef(true);
-
-  // useEffect(() => {
-  //   if (firstRender.current) {
-  //     firstRender.current = false;
-  //     return;
-  //   }
-  // });
-
-  // const paletteInitial = {opacity: 0, flexGrow: 0.00001};
-  // const paletteAnimate = {opacity: 1, flexGrow: 1};
-  // const paletteTransition = {duration: 0.2, type: "spring", stiffness: 50};
-
   return (
     <motion.div
       key={props.index}

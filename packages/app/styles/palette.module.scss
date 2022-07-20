@@ -1,19 +1,10 @@
 .palette {
   display: flex;
-  // flex-direction: column-reverse;
   flex-grow: 1;
-
   transition: height 0.4s ease, flex-grow 0.2s ease-out;
-  // position: absolute;
-  // top: 0;
-  // left: 0;
 
   .color {
     flex-grow: 1;
     transition: 0.2s ease-out;
-
-    // &:hover {
-    //   transform: scale(1.02);
-    // }
   }
 }
